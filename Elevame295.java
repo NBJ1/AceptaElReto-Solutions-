@@ -1,3 +1,4 @@
+package aceptaelreton;
 import java.util.Scanner;
 
 
@@ -13,17 +14,17 @@ public class Elevame295 {
 		do{
 		base = teclado.nextLong(); 
 		 exp = teclado.nextLong();
-		 
-				
-				
-			System.out.println(potencia(base,exp));
+		
+			if(base == 0 && exp == 0) {
+				System.exit(0);
+			}else {
+				System.out.println(potencia(base,exp));
+			}
+			
 			}while(comprobacion(base , exp) == true);
 			
 		}
 		
-	
-
-
 	private static boolean comprobacion(long base, long exp) {
 		if(base != 0 || exp != 0) {
 			return true;
@@ -31,13 +32,10 @@ public class Elevame295 {
 	
 		return false;
 	}
-
-
-
-
 	public static long potencia(long base , long exp) {
 		long resultado = 0;
-			if(exp == 0 ) {
+		
+			if(exp == 0) {
 				return 1; 
 			}else {
 				resultado = base * potencia(base , exp-1); 
@@ -46,7 +44,7 @@ public class Elevame295 {
 						}else {
 							return  base * potencia(base , exp-1); 
 				
-						}
+				}
 			}		
 		}
 	}
